@@ -1,0 +1,41 @@
+
+<div>
+    <ul>
+        <li *ngFor="let dir of directories" style="display: block; margin: 7px;">
+            <span style="display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;">
+                <span (click)="dir.toggle()" attr.id="{{ dir.name }}" ><div [ngClass]="{'nodeexpansion':dir.expanded,'nodecollapse':dir.expanded==false}"></div>
+                    {{ dir.name }}
+                </span>
+                <label>
+                    <input type="checkbox" [checked]="dir.checked" attr.id="{{dir.name}}" attr.value={{dir.name}} (click)="dir.check()" 
+                        (change)="valueChanged(dir)"/> 
+                    <span class="label-text"></span>
+                </label>                    
+                
+            </span>
+        
+            <div *ngIf="dir.expanded">
+                <ul>
+                    <li *ngFor="let file of dir.files" style="display: block; margin: 8px;">
+                        <span style="display: flex;
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: flex-start;">
+                            <span> {{file}} </span>
+                            <label>
+                                <input type="checkbox"  [checked]="dir.checked" attr.id="{{file}}" attr.value="{{file}}" 
+                                    (change)="valueChanged({'name':file,'reportees':'no'})"/> 
+                                <span class="label-text"></span>
+                            </label> 
+                        </span>
+                    </li>
+                </ul>
+                <tree-view [directories]="dir.directories" (valueChange)="valueChanged($event)"></tree-view>
+            </div>
+        </li>
+    </ul>
+</div>
+

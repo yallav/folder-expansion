@@ -1,0 +1,51 @@
+<div class="reviewsetupcontainer">
+    <div class="reviewsetupheader">
+        Review Period Setup
+    </div>
+    <div class="reviewsetuppage">
+        <div class="datagridcls">
+            <div class="datagridheader"> Review Periods</div>
+            <div class="datagridbody">
+                <p-dataTable [value]="transactions">
+                    <p-column field="sdate" header="Start Date" [sortable]="true"></p-column>
+                    <p-column field="edate" header="End Date" [sortable]="true"></p-column>
+                    <p-column field="status" header="Status" [sortable]="true"></p-column>
+                    <p-column field="name" header="Name" [sortable]="true"></p-column>
+                    <p-column field="editedby" header="Last Edited By" [sortable]="true"></p-column>
+                    <p-column field="editedon" header="Last Edited On" [sortable]="true"></p-column>
+                </p-dataTable>
+            </div>
+        </div>
+        <div class="addbtncontainer">
+            <button class="addbtncls" (click)="showReviewPeriodBottomPage()"> + Add </button>
+        </div>
+
+        <div class="reviewbottompage" *ngIf="this.reviewpagecontroller.showBottomPage">
+            <div class="calendarcontainer">
+                <div style="width: 12%"> Start Date </div>
+                <div><p-calendar [showIcon]="true" name="startDate"></p-calendar></div>
+            </div>
+        
+            <div class="calendarcontainer">
+                <div style="width: 12%"> End Date </div>
+                <div><p-calendar [showIcon]="true" name="endDate"></p-calendar></div>
+            </div> 
+
+            <div class="savebtncontainer">
+                <div class="reviewlabel"> Review_2019-08-07-2018-12-12 </div>
+                <div class="savebtncls"> 
+                    <button class="addbtncls" (click)="saveReviewPeriodBottomPage()"> Save </button> 
+                </div>
+            </div>
+
+            <!-- <div class="tablecontainer">
+                <div class="datagridbody">
+                    <p-dataTable [value]="depts">
+                        <p-column field="eligible" header="Eligible Departments"></p-column>
+                        <p-column field="ineligible" header="Ineligible Departments"></p-column>
+                    </p-dataTable>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>

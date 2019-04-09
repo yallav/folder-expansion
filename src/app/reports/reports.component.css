@@ -1,0 +1,28 @@
+.container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.rowcls{
+    width: 100%;
+    height: 26rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.chartcls {
+    width: 40rem;
+    height: 20rem;
+    display: block;
+    box-shadow: 0px 0px 1px rgba(0,0,0,0.7);
+    margin: 2%;
+    transition: transform 1s;
+}
+
+.chartcls:hover {
+    transform: scale(1.05) ;
+}

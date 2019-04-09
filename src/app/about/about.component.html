@@ -1,0 +1,40 @@
+<div class="aboutcontainercls">
+    <div class="aboutheader">
+        About Employee Matrix System
+    </div>
+
+    <div class="rowcls">                
+        <div class="imgcontainer">
+            <div class="w3-display-middle">
+                <div class="leftarrow" (click)="clickPrevious()"> &#10094; </div>
+                <div class="rightarrow" (click)="clickNext()"> &#10095; </div>
+            </div>
+            
+            <img pane class="mySlideshide" *ngFor="let image of carouselimages;let select = index;" 
+                [id]=idx [src]="image.imagesrc" 
+                [ngClass]="{'mySlidesdisplay': select === selectedIndex}">
+            <!-- <label> {{this.carouselimages[this.selectedIndex].text}} </label> -->
+            <div class="w3-display-bottom">
+                <div class="rowcls">
+                    <div *ngFor="let i of carouselimages; let idx=index" 
+                        class="spancls w3-blue w3-hover-white" 
+                        [ngClass]="{'w3-blue': idx !== selectedIndex,'w3-white':idx === selectedIndex}" 
+                        (click)="selected(idx)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rowcls">
+        <section style="margin: 1% 2%;">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. 
+                Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, 
+                felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. 
+                Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque penatibus et magnis 
+                dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.            
+            </p>
+        </section>
+    </div>
+</div>

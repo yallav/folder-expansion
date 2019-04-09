@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="rowcls">
+        <div class="chartcls">
+            <p-chart type="polarArea" [data]="pdata" [options]="options"></p-chart>
+        </div>
+
+        <div class="chartcls">
+            <p-chart type="pie" [data]="pdata" [options]="options"></p-chart>
+        </div>
+    </div>
+
+    <div class="rowcls">
+        <div class="chartcls">
+            <p-chart type="bar" [data]="barchartdata" [options]="options"></p-chart>
+        </div>
+
+        <div class="chartcls">
+            <p-chart type="line" [data]="linechartdata" [options]="options"></p-chart>
+        </div>
+    </div>
+</div>

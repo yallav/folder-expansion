@@ -1,0 +1,45 @@
+<div class="container"> 
+  <div class="headerclass">
+    <nav class="appmenuclass">
+        <ul>
+          <li class="menuitemcls"> 
+            <a class="homelinkscls" [routerLink]="['/about']"> Home </a>
+          </li>
+          <li class="menuitemcls"> Assess </li>
+          <li class="setupmenucls"> Setup
+            <ul class="setupsubmenu">
+              <li class="submenuitemcls">
+                <a class="linkscls" [routerLink]="['/aspectsetup']"> Aspect Setup </a>
+              </li>
+              <li class="submenuitemcls">
+                  <a class="linkscls" [routerLink]="['/assesssetup']">  Assess Setup </a>
+              </li>        
+              <li class="submenuitemcls">
+                  <a class="linkscls" [routerLink]="['/deptsetup']">  Department Setup </a>
+              </li>      
+              <li class="submenuitemcls">
+                  <a class="linkscls" [routerLink]="['/reviewsetup']">  Review Period Setup </a>
+              </li>
+              <li class="submenuitemcls">
+                  <a class="linkscls" [routerLink]="['/employeesetup']">  Employee Setup </a>
+              </li>
+            </ul>
+          </li>
+          <li class="reportsmenucls"> Dashboards
+            <ul class="reportssubmenu">
+              <li class="submenuitemcls">
+                  <a class="linkscls" href="#"> Dashboards </a>
+              </li>
+              <li class="submenuitemcls">
+                  <a class="linkscls" [routerLink]="['/reports']"> Reports </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+    </nav>
+  </div>
+
+  <div style="width:100%; min-height: 75vh;">
+    <router-outlet> </router-outlet>
+  </div>
+</div>

@@ -1,0 +1,87 @@
+<div class="reviewsetupcontainer">
+    <div class="reviewsetupheader">
+        Assess Setup
+    </div>
+    <div class="reviewsetuppage">
+        
+        <div class="assessdataheadercls">
+            <div style="width:80%;margin:1%">
+                <label class="leftlabelcls"> Review Period </label> <label class="rightlabelcls"> ReviewPeriod_201901-201910 </label>
+            </div>
+            <div style="width:80%;margin:1%">
+                    <label class="leftlabelcls">  Current Stage </label> <label class="rightlabelcls"> Assessment </label>
+            </div>
+            <div style="width:80%;margin:1%">
+                    <label class="leftlabelcls">  Ends </label> <label class="rightlabelcls"> 30-Oct-2019 </label>
+            </div>
+            <div style="width:80%;margin:1%">
+                    <label class="leftlabelcls">  Days Left </label> <label class="rightlabelcls"> 45 </label>
+            </div>
+            <div style="width:80%;margin:1%">
+                <button class="reviewbuttoncls" style="width:10%"> Add </button>
+            </div>
+        </div>
+
+        <div class="datagridcls">
+            <div class="datagridheader"> Review Period </div>
+            <div class="datagridbody">
+                <p-table [columns]="cols" [value]="employees" [totalRecords]="10" [paginator]="true" [rows]="5" 
+                    sortMode="multiple" rowExpandMode="single" dataKey="name">
+                    <ng-template pTemplate="header" let-columns>
+                        <tr>
+                            <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+                                {{col.header}}
+                                <p-sortIcon [field]="col.field" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order" ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns">
+                        <tr>
+                            <td *ngFor="let col of columns; let i = index;" style="padding:0em;">
+                                <div [pRowToggler]="rowData" *ngIf="i==0; else other_content" style="padding:.75em;"> {{rowData[col.field]}}</div>                        
+                                <ng-template #other_content> <div style="padding:.75em;"> {{rowData[col.field]}}</div>
+                                </ng-template>
+                            </td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+                        <tr>
+                            <td [attr.colspan]="2" class="controlhovereffects">
+                                <div class="ui-g">
+                                    <div class="ui-g-6">
+                                        <img class="cutomimgcls" [attr.alt]="rowData.brand" src="assets/images/bg_1.jpg">
+                                    </div>
+                                    <div class="ui-g-6">
+                                        <b>Name:</b> {{rowData.name}}
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="controlhovereffects">
+                                <div class="ui-g-3">
+                                    <div class="ui-g">
+                                        <div class="ui-g-12"><b>Skills:</b> {{rowData.skills}}</div>
+                                        <div class="ui-g-12"><button class="addbtncls"> Add </button></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="controlhovereffects">
+                                <div class="ui-g-3">
+                                    <div class="ui-g">
+                                        <div class="ui-g-12"><b>Aspects:</b> {{rowData.aspects}}</div>
+                                        <div class="ui-g-12"><button class="addbtncls"> Add </button></div>
+                                    </div>
+                                </div>    
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+        <div style="display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin: 3%;">
+            <button class="reviewbuttoncls"> Request Review </button>
+        </div>
+    </div>
+</div>

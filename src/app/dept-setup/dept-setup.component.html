@@ -1,0 +1,72 @@
+<div class="reviewsetupcontainer">
+    <div class="reviewsetupheader">
+        Department Setup
+    </div>
+    <div class="reviewsetuppage">
+        <div class="datagridcls">
+            <div class="datagridheader"> Review Period </div>
+            <div class="datagridbody">
+                <p-dataTable [value]="transactions" [paginator]="true" [rows]="10" 
+                    selectionMode="single" [(selection)]="selectedDept"
+                    (onRowClick)="showEditDeptDailog()"
+                >
+                    <p-column field="dept" header="Dept" [sortable]="true"></p-column>
+                    <p-column field="dhead" header="Dept Head" [sortable]="true"></p-column>
+                    <p-column field="ohead" header="Org Head" [sortable]="true"></p-column>
+                    <p-column field="status" header="Status" [sortable]="true"></p-column>
+                </p-dataTable>
+            </div>
+        </div>
+        <div class="addbtncontainer">
+            <button class="addbtncls" (click)="showAddDeptDialog()"> + Add </button>
+        </div>
+<!--         <div style="text-align: left">
+                Selected Car: {{selectedDept ? selectedDept.dept + ' - ' + selectedDept.dhead + 
+                ' - ' + selectedDept.ohead + ' - ' + selectedDept.status: 'none'}}
+        </div> -->
+
+        <p-dialog header="Add Department" [(visible)]="addDailogDisplay" [modal]="true" [responsive]="true" 
+            [width]="500" [minWidth]="200" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+            <div class="dialogpagecls">
+                <div class="controlcls">
+                    <label style="width: 40%;"> Review Period</label> <label style="width: 60%;"> ReviewPeriod_20180417-20181018</label>
+                </div>
+                <div class="controlcls">
+                    <label style="width: 40%;"> Department</label> <input class="dialogpageinputcls" type="text" name="dept" id="dept"/>
+                </div>
+                <div class="controlcls">
+                    <label style="width: 40%;"> Department Head</label> <input class="dialogpageinputcls" type="text" name="dhead" id="dhead"/>
+                </div>
+                <div class="controlcls">
+                    <label style="width: 40%;"> Organization Lead</label> <input class="dialogpageinputcls" type="text" name="ohead" id="ohead"/>
+                </div>                                
+            </div>
+            <p-footer style="padding:1em;">
+                <button class="addbtncls" (click)="addDailogDisplay=false">Save</button>
+                <button class="addbtncls" (click)="addDailogDisplay=false">Cancel</button>
+            </p-footer>
+        </p-dialog>
+
+        <p-dialog header="Edit Department" [(visible)]="editDailogDisplay" [modal]="true" [responsive]="true" 
+            [width]="500" [minWidth]="200" [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+            <div class="dialogpagecls">
+                <div class="controlcls">
+                    <label style="width: 40%;"> Review Period</label> <label style="width: 60%;"> ReviewPeriod_20180417-20181018</label>
+                </div>
+                <div class="controlcls">
+                    <label style="width: 40%;"> Department</label> <input class="dialogpageinputcls" type="text" name="dept" id="dept"/>
+                </div>
+                <div class="controlcls">
+                    <label style="width: 40%;"> Department Head</label> <input class="dialogpageinputcls" type="text" name="dhead" id="dhead"/>
+                </div>
+                <div class="controlcls">
+                    <label style="width: 40%;"> Organization Lead</label> <input class="dialogpageinputcls" type="text" name="ohead" id="ohead"/>
+                </div>                                
+            </div>
+            <p-footer style="padding:1em;">
+                <button class="addbtncls" (click)="editDailogDisplay=false">Save</button>
+                <button class="addbtncls" (click)="editDailogDisplay=false">Cancel</button>
+            </p-footer>
+        </p-dialog>
+    </div>
+</div>

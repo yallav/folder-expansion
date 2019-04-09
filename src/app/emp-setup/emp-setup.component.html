@@ -1,0 +1,61 @@
+<div class="employeesetupcontainer">
+    <div class="employeesetupheader">
+        Employee Setup
+    </div>
+    <div class="employeesetuppage">
+        <div class="pagedetailscls">
+            <div class="fieldclass">
+                <label class="leftlabelcls"> Review Period </label> <label> ReviewPeriod_201901-201910</label>
+            </div>
+            <div class="fieldclass">
+                <label class="leftlabelcls"> Department </label>
+
+                <select id="resizing_select" (change)="filterOrgEvent()">
+                    <option value="All">All</option>
+                    <option value="CorpApps">Corp Apps</option>
+                    <option value="EngApps">Engineering Apps</option>
+                    <option value="Isrm">ISRM</option>
+                </select>
+
+                <select id="width_tmp_select">
+                    <option id="width_tmp_option"></option>
+                </select>
+            </div>
+            <div class="fieldclass">
+                <label class="leftlabelcls"> Department Head </label> <label> Samuel </label>
+            </div>
+            <div class="fieldclass">
+                <label class="leftlabelcls"> Organization Head </label> <label> Michael Bridges </label>
+            </div>
+            <div class="fieldclass" class="autoscrollcls">
+                <div *ngIf="directories.length == 0">
+                    Data is not ready
+                </div>
+                <div *ngIf="directories.length > 0">
+                    <tree-view [directories]="directories" (valueChange)="updateDialogControl($event)"></tree-view>
+                </div>
+            </div>
+
+            <p-dialog header="{{dialogTitle}}" [(visible)]="showDialogFlag">
+                <span> {{dialogContent}} </span>
+    
+                <p-footer>
+                    <button (click)="showDialogFlag=false" (click)="selectedEmployees()">Save</button>
+                    <button (click)="showDialogFlag=false">Cancel</button>
+                </p-footer>
+    
+            </p-dialog>
+    
+            <div class="fieldclass">
+                <button type="text" (click)="showSaveDialog()" [disabled]="disableSaveAndResetBtnFlag"> Save </button>        
+                <button type="text" (click)="showResetDialog()" [disabled]="disableSaveAndResetBtnFlag"> Reset </button>
+            </div>
+
+<!--             <pre>Selected names: 
+                <span *ngFor="let filternames of checked()">
+                    {{ filternames.name}}</span>
+            </pre> -->
+
+        </div>
+    </div>    
+</div>

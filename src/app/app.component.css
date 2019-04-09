@@ -1,0 +1,317 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px solid rgba(0,0,0,0.1);
+    border-right: 1px solid rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    /* overflow-y: visible; */
+    min-height:100%;
+    position:relative;
+}
+.headerclass{
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 0px 0px black;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #0D47A1;
+    padding: 0px;
+    margin: 0px;
+}
+
+.employeematrixtitlecls{
+    height: auto;
+    width: 100%;
+    box-shadow: 0px 0px 0px 0px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1% 0% 1% 0%;
+}
+
+.userprofilecls{
+    height: auto;
+    width: 20%;
+    box-shadow: 0px 0px 0px 0px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.smlogocls {
+    height: 1em;
+    width: 1em;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-left: 0.3em;
+    padding-right: 0.2em;
+    border-radius: 50%;
+}
+
+.appmenuclass{
+    height: auto;
+    width: 100%;
+    background-image: linear-gradient(to left,#002d72,#41b6e6);
+    color: snow;
+    box-shadow: 0px 0px 0px 0px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    font-size: 0.8em;
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+.menuitemcls, .setupmenucls, .reportsmenucls {
+    display: inline-block ;
+    position: relative ;
+    padding: 0.7rem ;
+    margin: 0.7em 1em ;
+    line-height: 100% ;
+    border: 1px solid rgba(0,0,0,0.9) ;
+    border-radius: 3px ;
+    box-sizing: border-box ;
+}
+
+.menuitemcls:hover, .setupmenucls:hover, .reportsmenucls:hover{
+    color: rgba(0, 0, 0, 0.7) !important;
+    background: #1078c8 !important;
+    border: 1px solid #1078c8 !important;
+}
+
+/* .menuitemcls{
+    transition: all 1s linear;
+}
+
+.menuitemcls:hover{
+    background: rgba(0,0,0,0.3) !important;
+    animation: menucolor 1s linear;
+} */
+
+@keyframes menucolor{
+    from {
+        width: 0%;
+    }
+
+    to{
+        width: 5%;
+    }
+}
+
+.submenuitemcls{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    color: black;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 1px rgba(0,0,0,0.3);
+    /* padding: 10% 0% 10% 3%; */
+}
+
+.submenuitemcls:hover{
+    background: #1078c8;
+} 
+
+.setupsubmenu {
+    display: none;
+    position: absolute;
+    left: 32%;
+    width: auto;
+}
+.reportssubmenu {
+    display: none;
+    position: absolute;
+    left: 40%;
+    width: auto;
+}
+.opensetupsubmenucls {
+    display: block;
+    position: absolute;
+    top: 123%;
+    left: 0%;
+    /* height: calc(7rem*2); */
+    width: 9rem;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.7);
+    border-radius: 3px;
+    background: white;
+    z-index: 3;
+    color: black;
+    padding: 0px;
+    margin: 0px auto;
+    cursor: pointer;
+}
+.opensetupsubmenucls::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -2.45%;
+    left: 15%;
+    padding: 0px;
+    width: 0.7rem;
+    height: 0.7rem;
+    box-sizing: border-box;
+    border-top: 0px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    border-right: 0px;
+    border-left: 1px solid rgba(255,255,255,0.3);
+    background: white;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(135deg);
+    z-index: -1;
+}
+.openreportssubmenucls {
+    display: block;
+    position: absolute;
+    top: 123%;
+    left: 0%;
+    /* height: calc(7rem*2); */
+    width: 7rem;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.4);
+    box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.7);
+    border-radius: 3px;
+    background: white;
+    z-index: 1;
+    color: black;
+    padding: 0px;
+    margin: 0px auto;
+    cursor: pointer;
+}
+
+.openreportssubmenucls::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -7%;
+    left: 15%;
+    padding: 0px;
+    width: 0.7rem;
+    height: 0.7rem;
+    box-sizing: border-box;
+    border-top: 0px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    border-right: 0px;
+    border-left: 1px solid rgba(255,255,255,0.3);
+    background: white;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(135deg);
+    z-index: -1;
+}
+
+.linkscls, .homelinkscls{
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+    margin: 7%;
+    font-size: 1.2em;
+    padding: 0px;
+    margin: 0px;
+}
+
+.linkscls{
+    padding: 10% 0% 10% 3%;
+}
+
+.homelinkscls{
+    margin: 0%;
+    color: inherit;
+    font-size: 1em;
+}
+
+.homelinkscls:hover{
+    color: rgba(0, 0, 0, 0.7) !important;
+}
+
+a:hover {
+    cursor: pointer !important;
+}
+
+hr{
+    margin: 0px;
+    padding: 0px;
+}
+
+.footercls{
+    display: flex;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.22);
+    font-size: 0.45em;
+    bottom: 0px;
+}
+
+.footerleftcls, .footercentercls, .footerrightcls{
+    display: block;
+}
+
+.footerleftcls{
+    width: 40%;
+    margin-left: 2%;
+}
+
+.footercentercls{
+    width: 20%;
+    float: right;
+    position: relative;
+}
+
+.footerrightcls{
+    width: 40%;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.linkcls{
+    color: rgb(103, 114, 131);
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+    transition: color 0.7s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+    text-decoration: none;
+    padding: 20px 12px;
+}
+
+.oneitcls{
+    color: #304ffe;
+    font-size: 28px;
+    transition: color 0.7s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+    padding: 0px 7px;
+}
