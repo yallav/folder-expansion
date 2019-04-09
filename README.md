@@ -1,6 +1,8 @@
 # folder-expansion
 Angular component which helps to expand the folder. This component can also be used as organisation expansion also.
 
+Employee Setup component is having folder expansion module. This is custome component which was developed to support  reuqirement of having check box on the right side of nide name. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
 
 ## Development server
